@@ -30,5 +30,12 @@
         "psr-4": {
             "Sofa\\Revisionable\\": "src"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sofa\\Revisionable\\Laravel\\ServiceProvider"
+            ]
+        }
     }
 }

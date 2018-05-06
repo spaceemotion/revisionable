@@ -17,12 +17,12 @@ class RevisionsTableCommand extends Command
     /** @var \Illuminate\Filesystem\Filesystem */
     protected $files;
 
-    /** @var \Illuminate\Foundation\Composer */
+    /** @var \Illuminate\Support\Composer */
     protected $composer;
 
     /**
      * @param \Illuminate\Filesystem\Filesystem $files
-     * @param \Illuminate\Foundation\Composer   $composer
+     * @param \Illuminate\Support\Composer   $composer
      */
     public function __construct(Filesystem $files, Composer $composer)
     {
@@ -34,7 +34,7 @@ class RevisionsTableCommand extends Command
     /**
      * Execute the console command.
      */
-    public function fire()
+    public function handle()
     {
         $path = $this->createBaseMigration();
         $this->files->put($path, $this->files->get(__DIR__.'/../migrations/revisions.stub'));
